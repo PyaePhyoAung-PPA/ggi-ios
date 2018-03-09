@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  ggi-ios
 //
-//  Created by aceplus on 3/9/18.
+//  Created by aceplus on 1/29/18.
 //  Copyright © 2018 Thuriya ACE Technology. All rights reserved.
 //
 
@@ -13,10 +13,24 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
+	
+	lazy var customTabBarController: CustomTabBarController = {
+		return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CustomTabBarController") as! CustomTabBarController
+	}()
 
+	lazy var mainNavigationController: AppNavigationController = {
+		return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNavigationController") as! AppNavigationController
+	}()
+	
+	lazy var menuViewController: MenuViewController = {
+		return UIStoryboard(name: "Menu", bundle: nil).instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+	}()
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		DGLocalization.sharedInstance.startLocalization()
+		
+		window?.rootViewController = AppNavigationDrawerController(rootViewController: customTabBarController, leftViewController: menuViewController, rightViewController: nil)
+		
 		return true
 	}
 

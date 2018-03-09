@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  ggi-ios
+
+  Created by aceplus on 3/9/18.
+  Copyright © 2018 Thuriya ACE Technology. All rights reserved.
+*/
+
+/***** Menu Screen *****/
+menu_message = "Message";
+menu_faq = "FAQ";
+menu_login = "Login";
+menu_setting = "Setting";
+
+/***** Home Screen *****/
+motor = "MOTOR";
+fire = "FIRE";
+endowment = "PUBLIC LIFE";
+groupLife = "GROUP LIFE";
+travel = "TRAVEL";
+health = "HEALTH";
+pa = "PERSONAL ACCIDENT";
+cargo = "CARGO";
